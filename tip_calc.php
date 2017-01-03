@@ -25,6 +25,20 @@
                 <br>
                 <input type="submit" name="submit"class="w3-btn w3-teal"  value="Calculate Tip">
                 <br>
+
+                <footer class="w3-container w3-teal" style="font-size:17px">
+                    <?PHP
+
+
+                    function calculateTip($tip,$subTotal) {
+                        return  number_format(($tip * $subTotal), 2);
+                    }
+
+                    function calculateTotal($subTotal, $amount){
+                        return  $subTotal + $amount;
+                    }
+                    ?>
+                </footer>
         </div>
 </body>
 </html>
