@@ -1,10 +1,10 @@
-# Pre-work - *Name of App Here*
+# Pre-work - *TipCalc*
 
-**Name of your app** is a tip calculator PHP page.
+**TipCalc** is a tip calculator PHP page.
 
-Submitted by: **Your Name Here**
+Submitted by: **Kenneth Padro**
 
-Time spent: **X** hours spent in total
+Time spent: **6** hours spent in total
 
 ## User Stories
 
@@ -28,7 +28,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://imgur.com/a/bL552' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
