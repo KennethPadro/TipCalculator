@@ -27,10 +27,9 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/bL552"><a href="http://imgur.com/a/bL552">TipCalc</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
 <img src='http://i.imgur.com/XMDIsOy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-![](http://i.imgur.com/XMDIsOy.gif)
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
