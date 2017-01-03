@@ -9,7 +9,7 @@ Time spent: **6** hours spent in total
 ## User Stories
 
 The following **required** functionality is complete:
-* [ ] User can enter a bill amount, choose a tip percentage, and submit the form to see the tip and total values.
+* [] User can enter a bill amount, choose a tip percentage, and submit the form to see the tip and total values.
 * [ ] Tip percentage choices use a PHP loop to output three radio buttons.
 * [ ] PHP code sets reasonable default values for the form.
 * [ ] PHP code confirms the presence and correct format of submitted values.
@@ -28,8 +28,9 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/bL552"><a href="http://imgur.com/a/bL552">TipCalc</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-http://imgur.com/a/bL552' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-![](http://www.reactiongifs.us/wp-content/uploads/2013/10/nuh_uh_conan_obrien.gif)
+<img src='http://i.imgur.com/XMDIsOy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+![](http://i.imgur.com/XMDIsOy.gif)
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
