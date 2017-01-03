@@ -25,20 +25,37 @@
                 <br>
                 <input type="submit" name="submit"class="w3-btn w3-teal"  value="Calculate Tip">
                 <br>
-
-                <footer class="w3-container w3-teal" style="font-size:17px">
-                    <?PHP
-
-
-                    function calculateTip($tip,$subTotal) {
-                        return  number_format(($tip * $subTotal), 2);
-                    }
-
-                    function calculateTotal($subTotal, $amount){
-                        return  $subTotal + $amount;
-                    }
-                    ?>
-                </footer>
         </div>
+
+        <footer class="w3-container w3-teal" style="font-size:17px">
+            <?PHP
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (empty($_POST['subTotal'])) {
+                    echo nl2br("Please enter subtotal amount \n");
+                }else $subTotal = $_POST['subTotal'];
+
+                if (empty($_POST['tip'])) {
+                    echo nl2br("Please enter tip amount \n");
+                }else $tip = $_POST['tip'];
+
+                if (is_numeric($subTotal) AND $subTotal > 0){
+                    $amount = calculateTip($tip,$subTotal);
+                    $total = calculateTotal($subTotal,$amount);
+                    echo nl2br("Tip: $$amount \n Total: $$total");
+                }
+                else echo nl2br("Please enter positive numbers only \n");
+            }
+
+            function calculateTip($tip,$subTotal) {
+                return  number_format(($tip * $subTotal), 2);
+            }
+
+            function calculateTotal($subTotal, $amount){
+                return  $subTotal + $amount;
+            }
+            ?>
+        </footer>
+    </div>
+</div>
 </body>
 </html>
