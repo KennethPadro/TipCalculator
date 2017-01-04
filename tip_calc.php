@@ -5,14 +5,14 @@
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <body>
 
-<div class="w3-container w3-margin-top " style="max-width:500px;">
-    <div class="w3-card-4 " >
+<div class="w3-container w3-margin-top" style="max-width:300px;">
+    <div class="w3-card-4" >
         <header class="w3-container w3-teal">
             <h1>Tip Calculator</h1>
         </header>
         <div class="w3-container w3-margin">
             <form action="" method="post">
-                Sub Total: $<input type="text" name="subTotal" value="<?php echo $_POST['subTotal']; ?>"/><br/><br/>
+                Sub Total: $<input style="max-width:100px;" type="text" name="subTotal" value="<?php echo $_POST['subTotal']; ?>"/><br/><br/>
                 Select tip Percentage:<br/>
 
                 <?php
@@ -22,34 +22,42 @@
                     <input type="radio" name="tip" value=<?php echo $value;if (isset($_POST['tip']) && $_POST['tip'] == $value) echo ' checked="checked"'; ?>><?php echo $value; ?>%<br>
                     <?php } ?>
                 <br>
-                <input type="submit" name="submit"class="w3-btn w3-teal"  value="Calculate Tip">
+                <input id="button" type="submit" name="submit"class="w3-btn w3-teal"  value="Calculate Tip">
                 <br>
         </div>
 
-        <footer class="w3-container w3-teal" style="font-size:17px">
+        <footer class="w3-container w3-teal " style="font-size:17px">
             <?PHP
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                if (empty($_POST['subTotal'])) {
+                if (empty($_POST['subTotal']))
+                {
                     echo nl2br("Please enter subtotal amount \n");
                 } else
                     $subTotal = $_POST['subTotal'];
 
-                if (empty($_POST['tip'])) {
+                if (empty($_POST['tip']))
+                {
                     echo nl2br("Please enter tip amount \n");
                 } else
                     $tip = $_POST['tip'];
 
-                if (is_numeric($subTotal) AND $subTotal > 0) {
-                    $amount = calculateTip($tip, $subTotal);
-                    $total  = calculateTotal($subTotal, $amount);
-                    echo nl2br("Tip: $$amount \n Total: $$total");
-                } else
-                    echo nl2br("Please enter positive numbers only \n");
+                if (isset($_POST['subTotal']) AND isset($_POST['tip']))
+                {
+                    if (is_numeric($subTotal) AND ($subTotal > 0))
+                    {
+                        $amount = calculateTip($tip, $subTotal);
+                        $total = calculateTotal($subTotal, $amount);
+                        echo nl2br("Tip: $$amount \n Total: $$total");
+                    } else
+                        echo nl2br("Please enter positive numbers only \n");
+                }
             }
+
             function calculateTip($tip, $subTotal)
             {
                 return number_format((($tip / 100) * $subTotal), 2);
             }
+
             function calculateTotal($subTotal, $amount)
             {
                 return $subTotal + $amount;
@@ -59,4 +67,8 @@
     </div>
 </div>
 </body>
+
+<script type="text/javascript">
+    document.getElementById("resultBox").style.color = "w3-red";
+</script>
 </html>
