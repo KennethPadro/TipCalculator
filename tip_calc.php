@@ -19,9 +19,8 @@
                 $values = array(10, 15, 20);
                 foreach ($values as $value) {
                     ?>
-                    <input type="radio" name="tip" value=<?php echo '.' . $value; ?>><?php echo $value; ?>%<br>
-                    <?php
-                } ?>
+                    <input type="radio" name="tip" value=<?php echo $value;if (isset($_POST['tip']) && $_POST['tip'] == $value) echo ' checked="checked"'; ?>><?php echo $value; ?>%<br>
+                    <?php } ?>
                 <br>
                 <input type="submit" name="submit"class="w3-btn w3-teal"  value="Calculate Tip">
                 <br>
@@ -32,26 +31,28 @@
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (empty($_POST['subTotal'])) {
                     echo nl2br("Please enter subtotal amount \n");
-                }else $subTotal = $_POST['subTotal'];
+                } else
+                    $subTotal = $_POST['subTotal'];
 
                 if (empty($_POST['tip'])) {
                     echo nl2br("Please enter tip amount \n");
-                }else $tip = $_POST['tip'];
+                } else
+                    $tip = $_POST['tip'];
 
-                if (is_numeric($subTotal) AND $subTotal > 0){
-                    $amount = calculateTip($tip,$subTotal);
-                    $total = calculateTotal($subTotal,$amount);
+                if (is_numeric($subTotal) AND $subTotal > 0) {
+                    $amount = calculateTip($tip, $subTotal);
+                    $total  = calculateTotal($subTotal, $amount);
                     echo nl2br("Tip: $$amount \n Total: $$total");
-                }
-                else echo nl2br("Please enter positive numbers only \n");
+                } else
+                    echo nl2br("Please enter positive numbers only \n");
             }
-
-            function calculateTip($tip,$subTotal) {
-                return  number_format(($tip * $subTotal), 2);
+            function calculateTip($tip, $subTotal)
+            {
+                return number_format((($tip / 100) * $subTotal), 2);
             }
-
-            function calculateTotal($subTotal, $amount){
-                return  $subTotal + $amount;
+            function calculateTotal($subTotal, $amount)
+            {
+                return $subTotal + $amount;
             }
             ?>
         </footer>
