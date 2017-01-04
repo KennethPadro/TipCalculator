@@ -7,7 +7,7 @@
 
 <div class="w3-container w3-margin-top" style="max-width:350px;">
     <div class="w3-card-4" >
-        <header class="w3-container w3-teal">
+        <header class="w3-container w3-deep-orange">
             <h1>Tip Calculator</h1>
         </header>
         <div class="w3-container w3-margin">
@@ -23,13 +23,13 @@
                     <?php } ?>
                 <br>
                 <div class="w3-container w3-center ">
-                    <input id="button" type="submit" name="submit"class="w3-btn w3-teal"  value="Calculate Tip">
+                    <input id="button" type="submit" name="submit"class="w3-btn w3-deep-orange"  value="Calculate Tip">
                 </div>
 
 
         </div>
 
-        <footer class="w3-container w3-teal " style="font-size:16px">
+        <footer class="w3-container w3-deep-orange " style="font-size:16px">
             <?PHP
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (empty($_POST['subTotal']))
