@@ -34,7 +34,12 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Spent most of the time figuring out how to keep radio button values upon submitting values. At first, I was 
+assigning decimal values to the radio button in the loop. 
+Later I was comparing these values with the one on the array to make sure which one was selected. Solved this by assigning integer values,
+ and in the calculation changing the value to decimal for percentage calculations.
+
+
 
 ## License
 
