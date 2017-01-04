@@ -5,14 +5,14 @@
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <body>
 
-<div class="w3-container w3-margin-top" style="max-width:300px;">
+<div class="w3-container w3-margin-top" style="max-width:350px;">
     <div class="w3-card-4" >
         <header class="w3-container w3-teal">
             <h1>Tip Calculator</h1>
         </header>
         <div class="w3-container w3-margin">
             <form action="" method="post">
-                Sub Total: $<input style="max-width:100px;" type="text" name="subTotal" value="<?php echo $_POST['subTotal']; ?>"/><br/><br/>
+                Sub Total: $<input style="max-width:150px;" type="text" name="subTotal" value="<?php echo $_POST['subTotal']; ?>"/><br/><br/>
                 Select tip Percentage:<br/>
 
                 <?php
@@ -22,11 +22,14 @@
                     <input type="radio" name="tip" value=<?php echo $value;if (isset($_POST['tip']) && $_POST['tip'] == $value) echo ' checked="checked"'; ?>><?php echo $value; ?>%<br>
                     <?php } ?>
                 <br>
-                <input id="button" type="submit" name="submit"class="w3-btn w3-teal"  value="Calculate Tip">
-                <br>
+                <div class="w3-container w3-center ">
+                    <input id="button" type="submit" name="submit"class="w3-btn w3-teal"  value="Calculate Tip">
+                </div>
+
+
         </div>
 
-        <footer class="w3-container w3-teal " style="font-size:17px">
+        <footer class="w3-container w3-teal " style="font-size:16px">
             <?PHP
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (empty($_POST['subTotal']))
@@ -37,7 +40,7 @@
 
                 if (empty($_POST['tip']))
                 {
-                    echo nl2br("Please enter tip amount \n");
+                    echo nl2br("Please select tip amount \n");
                 } else
                     $tip = $_POST['tip'];
 
